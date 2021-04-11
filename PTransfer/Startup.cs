@@ -20,6 +20,7 @@ namespace PTransfer {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseMvc();
         }
     }
 }

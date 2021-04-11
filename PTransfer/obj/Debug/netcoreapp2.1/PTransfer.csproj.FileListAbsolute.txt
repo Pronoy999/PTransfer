@@ -1,0 +1,15 @@
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\bin\Debug\netcoreapp2.1\PTransfer.deps.json
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\bin\Debug\netcoreapp2.1\PTransfer.runtimeconfig.json
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\bin\Debug\netcoreapp2.1\PTransfer.runtimeconfig.dev.json
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\bin\Debug\netcoreapp2.1\PTransfer.dll
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\bin\Debug\netcoreapp2.1\PTransfer.pdb
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.csprojAssemblyReference.cache
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.AssemblyInfoInputs.cache
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.AssemblyInfo.cs
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.csproj.CoreCompileInputs.cache
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.RazorAssemblyInfo.cache
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.RazorAssemblyInfo.cs
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.RazorTargetAssemblyInfo.cache
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.dll
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.pdb
+E:\OneDrive\DotNetApplications\PTransfer\PTransfer\PTransfer\obj\Debug\netcoreapp2.1\PTransfer.genruntimeconfig.cache

@@ -56,6 +56,14 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.23, )"
+            },
+            "dotenv.net": {
+              "target": "Package",
+              "version": "[3.0.0, )"
             }
           },
           "imports": [
