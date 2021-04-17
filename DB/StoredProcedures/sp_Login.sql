@@ -17,7 +17,8 @@ begin
         from tbl_user_master u
                  inner join tbl_credentials_master c
                             on c.email_address = u.email_address
-                                and u.is_active = 1 and c.is_active = 1;
+                                and u.is_active = 1 and c.is_active = 1
+        where u.email_address=parEmail and c.password_hash=parPassword;
     else
         select -1 as id;
     end if;
