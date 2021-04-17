@@ -8,7 +8,11 @@
       "TRACE",
       "DEBUG",
       "NETCOREAPP",
-      "NETCOREAPP2_1"
+      "NETCOREAPP2_1",
+      "NETCOREAPP1_0_OR_GREATER",
+      "NETCOREAPP1_1_OR_GREATER",
+      "NETCOREAPP2_0_OR_GREATER",
+      "NETCOREAPP2_1_OR_GREATER"
     ],
     "languageVersion": "7.3",
     "platform": "",
@@ -28,7 +32,9 @@
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
           "MySql.Data": "8.0.23",
-          "dotenv.net": "3.0.0"
+          "Portable.BouncyCastle": "1.8.10",
+          "dotenv.net": "3.0.0",
+          "jose-jwt": "3.1.1"
         },
         "runtime": {
           "PTransfer.dll": {}
@@ -37,17 +43,7 @@
           "PTransfer.dll": {}
         }
       },
-      "BouncyCastle.NetCore/1.8.5": {
-        "runtime": {
-          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
-            "assemblyVersion": "1.8.5.0",
-            "fileVersion": "1.8.19031.1"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
-        }
-      },
+      "BouncyCastle.NetCore/1.8.5": {},
       "dotenv.net/3.0.0": {
         "dependencies": {
           "System.Memory": "4.5.4"
@@ -74,6 +70,28 @@
         },
         "compile": {
           "lib/netstandard2.0/Google.Protobuf.dll": {}
+        }
+      },
+      "jose-jwt/3.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "11.0.2",
+          "System.IO.Compression": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0",
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Cng": "4.5.0",
+          "System.Security.Cryptography.Csp": "4.3.0",
+          "System.Security.Cryptography.X509Certificates": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.4/jose-jwt.dll": {
+            "assemblyVersion": "3.1.1.0",
+            "fileVersion": "3.1.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.4/jose-jwt.dll": {}
         }
       },
       "K4os.Compression.LZ4/1.1.11": {
@@ -152,6 +170,17 @@
           "lib/netstandard2.0/MySql.Data.dll": {},
           "lib/netstandard2.0/Ubiety.Dns.Core.dll": {},
           "lib/netstandard2.0/Zstandard.Net.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.10": {
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.10.0",
+            "fileVersion": "1.8.10.1"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
         }
       },
       "SSH.NET/2020.0.0-beta1": {
@@ -3392,6 +3421,13 @@
       "path": "google.protobuf/3.11.4",
       "hashPath": "google.protobuf.3.11.4.nupkg.sha512"
     },
+    "jose-jwt/3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VG1ucVqH8XTgie3kCOYZH07rbdyQm2N6iYpMgIOZYU1TfroiEJNr68k44YrzCwAUh4wYWEbub0nZDltIiisCZg==",
+      "path": "jose-jwt/3.1.1",
+      "hashPath": "jose-jwt.3.1.1.nupkg.sha512"
+    },
     "K4os.Compression.LZ4/1.1.11": {
       "type": "package",
       "serviceable": true,
@@ -3433,6 +3469,13 @@
       "sha512": "sha512-5UPKd+OX5aSR8fTTfWzAifYg8YKOWMVX39bkdGbI3/SB3khdE13DZVMrk6CzjXvo2BjXic9emf2lwgvJTVWnyg==",
       "path": "mysql.data/8.0.23",
       "hashPath": "mysql.data.8.0.23.nupkg.sha512"
+    },
+    "Portable.BouncyCastle/1.8.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XLhjNAwuVB9ynwn11l5K44eyozh8q6gFseTrlnLNttejimglX7+F9+vxh60LPjvA/DAt6fUdS43N3ah8K6eaWg==",
+      "path": "portable.bouncycastle/1.8.10",
+      "hashPath": "portable.bouncycastle.1.8.10.nupkg.sha512"
     },
     "SSH.NET/2020.0.0-beta1": {
       "type": "package",

@@ -35,6 +35,26 @@
           "lib/netstandard2.0/Google.Protobuf.dll": {}
         }
       },
+      "jose-jwt/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.IO.Compression": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0",
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Cng": "4.3.0",
+          "System.Security.Cryptography.Csp": "4.3.0",
+          "System.Security.Cryptography.X509Certificates": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.4/jose-jwt.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/jose-jwt.dll": {}
+        }
+      },
       "K4os.Compression.LZ4/1.1.11": {
         "type": "package",
         "dependencies": {
@@ -2733,6 +2753,15 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "Portable.BouncyCastle/1.8.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -3963,7 +3992,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Security.Cryptography.Csp.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Csp.dll": {
@@ -4539,6 +4568,21 @@
         "lib/netstandard2.0/Google.Protobuf.dll",
         "lib/netstandard2.0/Google.Protobuf.pdb",
         "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
+    "jose-jwt/3.1.1": {
+      "sha512": "VG1ucVqH8XTgie3kCOYZH07rbdyQm2N6iYpMgIOZYU1TfroiEJNr68k44YrzCwAUh4wYWEbub0nZDltIiisCZg==",
+      "type": "package",
+      "path": "jose-jwt/3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "jose-jwt.3.1.1.nupkg.sha512",
+        "jose-jwt.nuspec",
+        "lib/net40/jose-jwt.dll",
+        "lib/net461/jose-jwt.dll",
+        "lib/netstandard1.4/jose-jwt.dll",
+        "lib/netstandard2.1/jose-jwt.dll"
       ]
     },
     "K4os.Compression.LZ4/1.1.11": {
@@ -7407,6 +7451,21 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "Portable.BouncyCastle/1.8.10": {
+      "sha512": "XLhjNAwuVB9ynwn11l5K44eyozh8q6gFseTrlnLNttejimglX7+F9+vxh60LPjvA/DAt6fUdS43N3ah8K6eaWg==",
+      "type": "package",
+      "path": "portable.bouncycastle/1.8.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/BouncyCastle.Crypto.dll",
+        "lib/net40/BouncyCastle.Crypto.xml",
+        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
+        "portable.bouncycastle.1.8.10.nupkg.sha512",
+        "portable.bouncycastle.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -12317,7 +12376,9 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
       "MySql.Data >= 8.0.23",
-      "dotenv.net >= 3.0.0"
+      "Portable.BouncyCastle >= 1.8.10",
+      "dotenv.net >= 3.0.0",
+      "jose-jwt >= 3.1.1"
     ]
   },
   "packageFolders": {
@@ -12380,9 +12441,17 @@
             "target": "Package",
             "version": "[8.0.23, )"
           },
+          "Portable.BouncyCastle": {
+            "target": "Package",
+            "version": "[1.8.10, )"
+          },
           "dotenv.net": {
             "target": "Package",
             "version": "[3.0.0, )"
+          },
+          "jose-jwt": {
+            "target": "Package",
+            "version": "[3.1.1, )"
           }
         },
         "imports": [
@@ -12395,7 +12464,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

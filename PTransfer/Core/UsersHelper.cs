@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using PTransfer.Models;
+using PTransfer.RequestModels;
 using PTransfer.Utilities;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,13 @@ using System.Threading.Tasks;
 
 namespace PTransfer.Core {
     public class UsersHelper {
-        public static Boolean RegisterUser(Users Users, string Password) {
+        /// <summary>
+        /// Method to register a user. 
+        /// </summary>
+        /// <param name="users"></param>
+        /// <param name="Password"></param>
+        /// <returns>The users object with the JwT.</returns>
+        public static Users RegisterUser(Users users, string Password) {
             try {
                 DbHelper dbHelper = new DbHelper();
                 MySqlConnection connection = dbHelper.GetMySqlConnection();
@@ -17,24 +24,31 @@ namespace PTransfer.Core {
                     connection.Open();
                     MySqlCommand command = new MySqlCommand(Constants.SP_REGISTER_USER, connection);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("parFirstName", Users.FirstName);
-                    command.Parameters.AddWithValue("parLastName", Users.LastName);
-                    command.Parameters.AddWithValue("parEmail", Users.EmailAddress);
-                    command.Parameters.AddWithValue("parPhone", Users.PhoneNumber);
+                    command.Parameters.AddWithValue("parFirstName", users.FirstName);
+                    command.Parameters.AddWithValue("parLastName", users.LastName);
+                    command.Parameters.AddWithValue("parEmail", users.EmailAddress);
+                    command.Parameters.AddWithValue("parPhone", users.PhoneNumber);
                     command.Parameters.AddWithValue("parPassword", Password);
-                    int id = Convert.ToInt32(command.ExecuteScalar());
+                    users.UserId = Convert.ToInt32(command.ExecuteScalar());
+                    if (users.UserId > -1) {
+                        users.JwToken = JwTHelper.GenrateJwT(users.ToKeyValuePairs());
+                        users.Password = null;
+                    }
                     command.Dispose();
                     connection.Close();
-                    if (id > -1) {
-                        return true;
-                    }
+                    return users;
                 }
-                return false;
             } catch (Exception e) {
-                Console.WriteLine(e.ToString());
+                Logger.logError(typeof(UsersHelper).Name, e.ToString());
                 throw e;
             }
         }
+        /// <summary>
+        /// Method to get the user details. 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="email"></param>
+        /// <returns>The users object if found</returns>
         public static Users GetUsers(int id, string email) {
             try {
                 DbHelper dbHelper = new DbHelper();
@@ -63,8 +77,35 @@ namespace PTransfer.Core {
                 }
                 return new Users();//returning a blank users object. 
             } catch (Exception e) {
-                Console.WriteLine(e.ToString());
+                Logger.logError(typeof(UsersHelper).Name, e.ToString());
                 throw e;
+            }
+        }
+        /// <summary>
+        /// Method to update the users. 
+        /// </summary>
+        /// <param name="users"></param>
+        /// <returns>1 if successfully update else -1.</returns>
+        public static int UpdateUserDetails(UsersForUpdate users) {
+            try {
+                DbHelper dbHelper = new DbHelper();
+                MySqlConnection connection = dbHelper.GetMySqlConnection();
+                using (connection) {
+                    connection.Open();
+                    MySqlCommand command = new MySqlCommand(Constants.SP_UPDATE_USER_DETAILS, connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("parUserId", users.UserId);
+                    command.Parameters.AddWithValue("parFirstName", users.FirstName);
+                    command.Parameters.AddWithValue("parLastName", users.LastName);
+                    command.Parameters.AddWithValue("parEmail", users.EmailAddress);
+                    command.Parameters.AddWithValue("parPhoneNumber", users.PhoneNumber);
+                    command.Parameters.AddWithValue("parPassword", users.Password);
+                    int id = Convert.ToInt32(command.ExecuteScalar());
+                    return id;
+                }
+            } catch (Exception e) {
+                Logger.logError(typeof(UsersHelper).Name, e.ToString());
+                return -1;
             }
         }
     }
