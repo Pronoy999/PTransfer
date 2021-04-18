@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace PTransfer.Utilities {
     public class DbHelper {
-        private MySqlConnection MySqlConnection;
         private string ConnectionString;
         private string DBHost;
         private string DBUserName;
@@ -23,7 +22,7 @@ namespace PTransfer.Utilities {
                 this.DBUserName, this.DBPassword);
         }
         public MySqlConnection GetMySqlConnection() {
-            return new MySqlConnection(ConnectionString);
+            return new MySqlConnection(this.ConnectionString);
         }
     }
 }
