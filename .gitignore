@@ -2,3 +2,5 @@
 /.vs/PTransfer/
 /PTransfer/.env
 /PTransfer/keys
+/PTransfer-Tests/bin/Debug/netcoreapp3.1
+/PTransfer-Tests/obj

@@ -29,6 +29,7 @@ namespace PTransfer.Utilities {
                     }
                 }
             } catch (Exception e) {
+                Logger.logError(typeof(JwTHelper).Name, e.ToString());
                 return null;
             }
         }
@@ -49,6 +50,7 @@ namespace PTransfer.Utilities {
                     }
                 }
             } catch (Exception e) {
+                Logger.logError(typeof(JwTHelper).Name, e.ToString());
                 return null;
             }
         }
