@@ -21,6 +21,16 @@ begin
             modified    timestamp default null
         );
     end if;
+    if not exists(
+            select 1
+            from information_schema.COLUMNS
+            where TABLE_SCHEMA = currentSchema
+              and TABLE_NAME = 'tbl_upload_request_parts'
+              and column_name = 'part_number'
+        ) then
+        alter table tbl_upload_request_parts
+            add column part_number int not null after request_id;
+    end if;
 end;
 call sp_tbl_upload_request_parts();
 drop procedure if exists sp_tbl_upload_request_parts;
