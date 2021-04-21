@@ -4,4 +4,4 @@ A dotnet Core project where a user can upload a file of any size and then share 
 
 
 # API Documentation
-https://www.getpostman.com/collections/207705fd0ef5cc7217f6
+https://documenter.getpostman.com/view/5329722/TzJvcw9f
