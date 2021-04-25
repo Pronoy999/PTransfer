@@ -35,6 +35,9 @@ namespace PTransfer.Utilities {
         }
         public static string ValidateJwT(string token) {
             try {
+                if (string.IsNullOrEmpty(token)) {
+                    return null;
+                }
                 RSAParameters rsaParameters;
                 string publicKey = Constants.PUBLIC_KEY_JWT;
                 using (var tr = new StringReader(publicKey)) {

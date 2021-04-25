@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "D6VH/6jMwjDKXhrlyr/tItPC0RGqFPLZcTBt5SeBMYMF7Cpx82p1EbwQbLFpYP3i2jRFMRPkG4Eig5MQrnA//A==",
+  "dgSpecHash": "F14EGDjAxJqwHwHENLAF8SEIa1HAXyEAEF5frTKvu/uMN8aJFaWjoGEQ+Ec2ryKcPxd7UJOwFh2UWYhIl51kow==",
   "success": true,
   "projectFilePath": "E:\\OneDrive\\DotNetApplications\\PTransfer\\PTransfer\\PTransfer\\PTransfer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mukhe\\.nuget\\packages\\awssdk.core\\3.7.0.15\\awssdk.core.3.7.0.15.nupkg.sha512",
+    "C:\\Users\\mukhe\\.nuget\\packages\\awssdk.s3\\3.7.0.16\\awssdk.s3.3.7.0.16.nupkg.sha512",
     "C:\\Users\\mukhe\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\mukhe\\.nuget\\packages\\dotenv.net\\3.0.0\\dotenv.net.3.0.0.nupkg.sha512",
     "C:\\Users\\mukhe\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
@@ -105,6 +107,7 @@
     "C:\\Users\\mukhe\\.nuget\\packages\\microsoft.aspnetcore.staticfiles\\2.1.1\\microsoft.aspnetcore.staticfiles.2.1.1.nupkg.sha512",
     "C:\\Users\\mukhe\\.nuget\\packages\\microsoft.aspnetcore.websockets\\2.1.1\\microsoft.aspnetcore.websockets.2.1.1.nupkg.sha512",
     "C:\\Users\\mukhe\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.1.1\\microsoft.aspnetcore.webutilities.2.1.1.nupkg.sha512",
+    "C:\\Users\\mukhe\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\mukhe\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
     "C:\\Users\\mukhe\\.nuget\\packages\\microsoft.codeanalysis.common\\2.8.0\\microsoft.codeanalysis.common.2.8.0.nupkg.sha512",
     "C:\\Users\\mukhe\\.nuget\\packages\\microsoft.codeanalysis.csharp\\2.8.0\\microsoft.codeanalysis.csharp.2.8.0.nupkg.sha512",
