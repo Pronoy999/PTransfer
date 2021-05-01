@@ -32,7 +32,7 @@ namespace PTransfer.Models {
             this.Parts = this.Parts.OrderBy(o => o.PartNumber).ToList();
             StringBuilder stringBuilder = new StringBuilder();
             for(int i = 0; i < this.Parts.Count; i++) {
-                stringBuilder.Append(this.Parts[i]);
+                stringBuilder.Append(this.Parts[i].PartValue);
             }
             return stringBuilder.ToString();
         }

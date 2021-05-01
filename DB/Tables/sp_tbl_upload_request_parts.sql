@@ -12,10 +12,10 @@ begin
         create table tbl_upload_request_parts
         (
             id          int primary key auto_increment,
-            request_id  int  not null,
-            part_value  text not null,
+            request_id  int      not null,
+            part_value  longtext not null,
             is_active   tinyint   default 1,
-            created_by  int  not null,
+            created_by  int      not null,
             created     timestamp default current_timestamp,
             modified_by int       default null,
             modified    timestamp default null

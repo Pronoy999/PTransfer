@@ -7,6 +7,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +15,8 @@ namespace PTransfer.Core {
     public class FileUploader {
         public static async void MergeFileAndUpload(RequestModels.UploadRequestUpdate uploadRequest) {
             UploadRequest request = MergeFile(uploadRequest.RequestId);
-            await UploadFile(request);
+            if (request != null)
+                await UploadFile(request);
         }
         /// <summary>
         /// Method to merge the file contents and create the file locally. 
@@ -45,10 +47,14 @@ namespace PTransfer.Core {
                         Convert.ToString(dataTable.Rows[i]["part_value"]));
                     uploadRequest.Parts.Add(part);
                 }
-                string fileContent = uploadRequest.GetRequestParts();
-                uploadRequest.FilePath = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + uploadRequest.FileName;
-                File.WriteAllText(uploadRequest.FilePath, fileContent);
-                return uploadRequest;
+                string fileContent = uploadRequest.GetRequestParts().Replace("\"","");
+                File.WriteAllText("Base-Data.txt", fileContent);
+                uploadRequest.FilePath = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + Path.DirectorySeparatorChar + uploadRequest.FileName;
+                File.WriteAllBytes(uploadRequest.FilePath, Convert.FromBase64String(fileContent));
+                if (ValidateHash(uploadRequest.FilePath, uploadRequest.FileHash))
+                    return uploadRequest;
+                //TODO: Update the error.
+                return null;
             } catch (Exception e) {
                 Logger.logError(typeof(FileUploader).Name, e.ToString());
                 return null;
@@ -63,6 +69,13 @@ namespace PTransfer.Core {
             S3Helper s3Helper = new S3Helper(uploadRequest.FileName, uploadRequest.FilePath);
             await s3Helper.Upload();
             File.Delete(uploadRequest.FilePath);
+        }
+        private static bool ValidateHash(string filePath, string originalhash) {
+            using (var md5 = MD5.Create()) {
+                using (var stream = File.OpenRead(filePath)) {
+                    return BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", "").ToLowerInvariant().Equals(originalhash);
+                }
+            }
         }
     }
 }
