@@ -37,7 +37,7 @@ namespace PTransfer.Controllers {
             string decodedToken = JwTHelper.ValidateJwT(token);
             dynamic tokenData = JObject.Parse(decodedToken);
             int userId = tokenData.UserId;
-            if (string.IsNullOrEmpty(decodedToken)) {
+            if (string.IsNullOrEmpty(decodedToken) || (id == 0 && userId != id)) {
                 this.HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
                 response = new Response(Constants.FORBIDDEN_MSG, Constants.ERROR_MSG, null);
                 return new ObjectResult(response);

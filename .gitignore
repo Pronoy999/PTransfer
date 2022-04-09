@@ -4,3 +4,5 @@
 /PTransfer/keys
 /PTransfer-Tests/bin/Debug/netcoreapp3.1
 /PTransfer-Tests/obj
+/Base64Data.txt
+/TestImage.jpg

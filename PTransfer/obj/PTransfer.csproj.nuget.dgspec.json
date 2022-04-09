@@ -40,6 +40,14 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "dependencies": {
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[3.7.0.15, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.7.0.16, )"
+            },
             "MSTest.TestFramework": {
               "target": "Package",
               "version": "[2.2.3, )"

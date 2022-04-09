@@ -15,6 +15,5 @@ begin
              inner join tbl_user_master u
                         on r.file_owner = u.id
     where r.id = parRequestId
-      and r.is_active = 1
-    order by p.part_number;
+      and r.is_active = 1;
 end;
